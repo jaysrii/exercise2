@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <title>arithmetic operators</title>
+</head>
+
+<body>
+
+  <label>Enter the first value:-</label>
+  <input type="text" id="input1" /><br><br>
+  <select id="operation">
+    <option value="">select an operation</option>
+    <option value="plus">+</option>
+    <option value="minus">-</option>
+    <option value="multiply">x</option>
+    <option value="divide">/</option>
+    <option value="modulus">%</option>
+  </select><br><br>
+  <label>Enter the second value:-</label>
+  <input type="text" id="input2" />
+  <button style="height: 30PX; width: 12%;" onclick="calculate()">Calculate</button><br><br>
+
+
+  <div id="result"></div>
+  <script>
+    function calculate() {
+      var input1 = Number(document.getElementById("input1").value)
+      var input2 = Number(document.getElementById("input2").value)
+      var operationperform = document.getElementById("operation").value;
+
+      var result;
+      switch (operationperform) {
+        case "plus":
+          result = input1 + input2;
+          break;
+        case "minus":
+          result = input1 - input2;
+          break;
+        case "multipy":
+          result = input1 * input2;
+          break;
+        case "divide":
+          result = input1 / input2;
+          break;
+        case "modulus":
+          result = input1 % input2;
+          break;
+        default:
+          result = "please select an operation!"
+          break;
+      }
+      document.getElementById("result").innerText ="Disply answer : " +result;
+      document.getElementById("input1").value = "";
+      document.getElementById("input2").value = "";
+
+    }
+
+  </script>
+</body>
+
+</html>
